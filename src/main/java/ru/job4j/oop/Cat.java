@@ -13,7 +13,7 @@ public class Cat {
     }
 
     public void show() {
-        System.out.println("name - " + this.name + "\nfood - " + this.food);
+        System.out.println("name - " + this.name + System.lineSeparator() + "food - " + this.food);
     }
 
     public static void main(String[] args) {
