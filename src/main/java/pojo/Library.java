@@ -22,7 +22,7 @@ public class Library {
         }
         System.out.println();
         for (int index = 0; index < books.length; index++) {
-            if (books[index].getName().equals("Clean code")) {
+            if ("Clean code".equals(books[index].getName())) {
                 System.out.printf("name: %-27s pages: %-10s %n", books[index].getName(), books[index].getPages());
             }
         }
