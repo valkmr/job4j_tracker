@@ -13,11 +13,12 @@ public class Matches {
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
-            while (matches < 1 || matches > 3) {
-                System.out.println("Необходимо ввести 1, 2 или 3");
-                matches = Integer.parseInt(input.nextLine());
+            if (matches >= 1 && matches <= 3 && matches <= count) {
+                count -= matches;
+            } else {
+                turn = !turn;
+                continue;
             }
-            count -= matches;
             System.out.println("Остаток = " + count);
         }
         if (!turn) {
