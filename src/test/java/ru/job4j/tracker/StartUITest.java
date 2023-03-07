@@ -32,7 +32,7 @@ class StartUITest {
         Tracker tracker = new Tracker();
         Item item = new Item("First");
         tracker.add(item);
-        String[] answers = {String.valueOf(item.getId()), "delete item"};
+        String[] answers = {String.valueOf(item.getId())};
         StartUI.deleteItem(new StubInput(answers), tracker);
         Item[] expected = new Item[] {};
         assertThat(tracker.findAll()).isEqualTo(expected);
@@ -45,7 +45,7 @@ class StartUITest {
         tracker.add(itemOne);
         Item itemTwo = new Item("Second");
         tracker.add(itemTwo);
-        String[] answers = {String.valueOf(itemTwo.getId()), "delete item"};
+        String[] answers = {String.valueOf(itemTwo.getId())};
         StartUI.deleteItem(new StubInput(answers), tracker);
         assertThat(tracker.findAll()[0]).isEqualTo(itemOne);
     }
