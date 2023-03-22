@@ -30,21 +30,6 @@ class StartUITest {
     }
 
     @Test
-    public void whenDeleteItem() {
-        Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("Deleted item"));
-        Input in = new StubInput(
-                new String[] {"0", String.valueOf(item.getId()), "1"}
-        );
-        UserAction[] actions = {
-                new DeleteAction(new ConsoleOutput()),
-                new ExitAction(new ConsoleOutput())
-        };
-        new StartUI(new ConsoleOutput()).init(in, tracker, actions);
-        assertThat(tracker.findById(item.getId())).isNull();
-    }
-
-    @Test
     public void whenReplaceItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
@@ -156,4 +141,20 @@ class StartUITest {
                         + "=== Exit Program ===" + ln
         );
     }
+    @Test
+
+    public void whenDeleteItem() {
+        Tracker tracker = new Tracker();
+        Item item = tracker.add(new Item("Deleted item"));
+        Input in = new StubInput(
+                new String[] {"0", String.valueOf(item.getId()), "1"}
+        );
+        UserAction[] actions = {
+                new DeleteAction(new ConsoleOutput()),
+                new ExitAction(new ConsoleOutput())
+        };
+        new StartUI(new ConsoleOutput()).init(in, tracker, actions);
+        assertThat(tracker.findById(item.getId())).isNull();
+    }
+
 }
