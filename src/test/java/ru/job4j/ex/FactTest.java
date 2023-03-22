@@ -15,4 +15,12 @@ class FactTest {
                 });
         assertThat(exception.getMessage()).isEqualTo("N could not bee less then 0");
     }
+
+    @Test
+    public void when5Then120() {
+        int factorial = 5;
+        int expected = 120;
+        int result = new Fact().calc(factorial);
+        assertThat(result).isEqualTo(expected);
+    }
 }
