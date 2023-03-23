@@ -141,6 +141,7 @@ class StartUITest {
                         + "=== Exit Program ===" + ln
         );
     }
+
     @Test
 
     public void whenDeleteItem() {
@@ -156,5 +157,4 @@ class StartUITest {
         new StartUI(new ConsoleOutput()).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
     }
-
 }
